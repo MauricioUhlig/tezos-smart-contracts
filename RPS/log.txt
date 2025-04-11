@@ -1,0 +1,301 @@
+Creating contract KT1TezoooozzSmartPyzzSTATiCzzzwwBFA1
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 -1)))))
+file RPS/step_001_cont_0_storage.tz
+file RPS/step_001_cont_0_storage.json
+file RPS/step_001_cont_0_storage.py
+file RPS/step_001_cont_0_types.py
+file RPS/step_001_cont_0_contract.tz contract RockPaperScissors
+file RPS/step_001_cont_0_contract.json contract RockPaperScissors
+Comment...
+ h1: Test 1: Scissors vs Paper - Scissors wins
+file RPS/step_003_cont_0_params.py
+file RPS/step_003_cont_0_params.tz
+file RPS/step_003_cont_0_params.json
+Executing add_player(sp.record(choice = 2))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 2)} (Pair 1000000 -1)))))
+file RPS/step_004_cont_0_params.py
+file RPS/step_004_cont_0_params.tz
+file RPS/step_004_cont_0_params.json
+Executing add_player(sp.record(choice = 1))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 2); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 1)} (Pair 2000000 -1)))))
+file RPS/step_005_cont_0_params.py
+file RPS/step_005_cont_0_params.tz
+file RPS/step_005_cont_0_params.json
+Executing check(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 2); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 1)} (Pair 2000000 0)))))
+  + Transfer
+     params: ()
+     amount: sp.tez(2)
+     to:     sp.contract(sp.unit, sp.address('tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX')).open_some()
+Verifying sp.contract_data(0).winner == 0...
+ OK
+file RPS/step_007_cont_0_params.py
+file RPS/step_007_cont_0_params.tz
+file RPS/step_007_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 0)))))
+Comment...
+ h1: Test 2: Paper vs Scissors - Scissors wins
+file RPS/step_009_cont_0_params.py
+file RPS/step_009_cont_0_params.tz
+file RPS/step_009_cont_0_params.json
+Executing add_player(sp.record(choice = 1))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 1)} (Pair 1000000 0)))))
+file RPS/step_010_cont_0_params.py
+file RPS/step_010_cont_0_params.tz
+file RPS/step_010_cont_0_params.json
+Executing add_player(sp.record(choice = 2))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 1); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 2)} (Pair 2000000 0)))))
+file RPS/step_011_cont_0_params.py
+file RPS/step_011_cont_0_params.tz
+file RPS/step_011_cont_0_params.json
+Executing check(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 1); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 2)} (Pair 2000000 1)))))
+  + Transfer
+     params: ()
+     amount: sp.tez(2)
+     to:     sp.contract(sp.unit, sp.address('tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T')).open_some()
+Verifying sp.contract_data(0).winner == 1...
+ OK
+file RPS/step_013_cont_0_params.py
+file RPS/step_013_cont_0_params.tz
+file RPS/step_013_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 1)))))
+Comment...
+ h1: Test 3: Check with one player - should fail
+file RPS/step_015_cont_0_params.py
+file RPS/step_015_cont_0_params.tz
+file RPS/step_015_cont_0_params.json
+Executing add_player(sp.record(choice = 1))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 1)} (Pair 1000000 1)))))
+file RPS/step_016_cont_0_params.py
+file RPS/step_016_cont_0_params.tz
+file RPS/step_016_cont_0_params.json
+Executing check(())...
+Expected error: 'You can only check if all have played'
+file RPS/step_017_cont_0_params.py
+file RPS/step_017_cont_0_params.tz
+file RPS/step_017_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 1)))))
+Comment...
+ h1: Test 4: Paper vs Paper - Tie
+file RPS/step_019_cont_0_params.py
+file RPS/step_019_cont_0_params.tz
+file RPS/step_019_cont_0_params.json
+Executing add_player(sp.record(choice = 1))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 1)} (Pair 1000000 1)))))
+file RPS/step_020_cont_0_params.py
+file RPS/step_020_cont_0_params.tz
+file RPS/step_020_cont_0_params.json
+Executing add_player(sp.record(choice = 1))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 1); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 1)} (Pair 2000000 1)))))
+file RPS/step_021_cont_0_params.py
+file RPS/step_021_cont_0_params.tz
+file RPS/step_021_cont_0_params.json
+Executing check(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 1); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 1)} (Pair 2000000 2)))))
+  + Transfer
+     params: ()
+     amount: sp.tez(1)
+     to:     sp.contract(sp.unit, sp.address('tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX')).open_some()
+  + Transfer
+     params: ()
+     amount: sp.tez(1)
+     to:     sp.contract(sp.unit, sp.address('tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T')).open_some()
+Verifying sp.contract_data(0).winner == 2...
+ OK
+file RPS/step_023_cont_0_params.py
+file RPS/step_023_cont_0_params.tz
+file RPS/step_023_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 2)))))
+Comment...
+ h1: Test 5: Rock vs Paper - Paper wins
+file RPS/step_025_cont_0_params.py
+file RPS/step_025_cont_0_params.tz
+file RPS/step_025_cont_0_params.json
+Executing add_player(sp.record(choice = 0))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0)} (Pair 1000000 2)))))
+file RPS/step_026_cont_0_params.py
+file RPS/step_026_cont_0_params.tz
+file RPS/step_026_cont_0_params.json
+Executing add_player(sp.record(choice = 1))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 1)} (Pair 2000000 2)))))
+file RPS/step_027_cont_0_params.py
+file RPS/step_027_cont_0_params.tz
+file RPS/step_027_cont_0_params.json
+Executing check(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 1)} (Pair 2000000 1)))))
+  + Transfer
+     params: ()
+     amount: sp.tez(2)
+     to:     sp.contract(sp.unit, sp.address('tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T')).open_some()
+Verifying sp.contract_data(0).winner == 1...
+ OK
+file RPS/step_029_cont_0_params.py
+file RPS/step_029_cont_0_params.tz
+file RPS/step_029_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 1)))))
+Comment...
+ h1: Test 6: Rock vs Scissors - Rock wins
+file RPS/step_031_cont_0_params.py
+file RPS/step_031_cont_0_params.tz
+file RPS/step_031_cont_0_params.json
+Executing add_player(sp.record(choice = 0))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0)} (Pair 1000000 1)))))
+file RPS/step_032_cont_0_params.py
+file RPS/step_032_cont_0_params.tz
+file RPS/step_032_cont_0_params.json
+Executing add_player(sp.record(choice = 2))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 2)} (Pair 2000000 1)))))
+file RPS/step_033_cont_0_params.py
+file RPS/step_033_cont_0_params.tz
+file RPS/step_033_cont_0_params.json
+Executing check(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 2)} (Pair 2000000 0)))))
+  + Transfer
+     params: ()
+     amount: sp.tez(2)
+     to:     sp.contract(sp.unit, sp.address('tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX')).open_some()
+Verifying sp.contract_data(0).winner == 0...
+ OK
+file RPS/step_035_cont_0_params.py
+file RPS/step_035_cont_0_params.tz
+file RPS/step_035_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 0)))))
+Comment...
+ h1: Test 7: Rock vs Rock - Tie
+file RPS/step_037_cont_0_params.py
+file RPS/step_037_cont_0_params.tz
+file RPS/step_037_cont_0_params.json
+Executing add_player(sp.record(choice = 0))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0)} (Pair 1000000 0)))))
+file RPS/step_038_cont_0_params.py
+file RPS/step_038_cont_0_params.tz
+file RPS/step_038_cont_0_params.json
+Executing add_player(sp.record(choice = 0))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 0)} (Pair 2000000 0)))))
+file RPS/step_039_cont_0_params.py
+file RPS/step_039_cont_0_params.tz
+file RPS/step_039_cont_0_params.json
+Executing check(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 0)} (Pair 2000000 2)))))
+  + Transfer
+     params: ()
+     amount: sp.tez(1)
+     to:     sp.contract(sp.unit, sp.address('tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX')).open_some()
+  + Transfer
+     params: ()
+     amount: sp.tez(1)
+     to:     sp.contract(sp.unit, sp.address('tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T')).open_some()
+Verifying sp.contract_data(0).winner == 2...
+ OK
+file RPS/step_041_cont_0_params.py
+file RPS/step_041_cont_0_params.tz
+file RPS/step_041_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 2)))))
+Comment...
+ h1: Test 8: Scissors vs Scissors - Tie
+file RPS/step_043_cont_0_params.py
+file RPS/step_043_cont_0_params.tz
+file RPS/step_043_cont_0_params.json
+Executing add_player(sp.record(choice = 2))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 2)} (Pair 1000000 2)))))
+file RPS/step_044_cont_0_params.py
+file RPS/step_044_cont_0_params.tz
+file RPS/step_044_cont_0_params.json
+Executing add_player(sp.record(choice = 2))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 2); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 2)} (Pair 2000000 2)))))
+file RPS/step_045_cont_0_params.py
+file RPS/step_045_cont_0_params.tz
+file RPS/step_045_cont_0_params.json
+Executing check(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 2); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 2)} (Pair 2000000 2)))))
+  + Transfer
+     params: ()
+     amount: sp.tez(1)
+     to:     sp.contract(sp.unit, sp.address('tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX')).open_some()
+  + Transfer
+     params: ()
+     amount: sp.tez(1)
+     to:     sp.contract(sp.unit, sp.address('tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T')).open_some()
+Verifying sp.contract_data(0).winner == 2...
+ OK
+file RPS/step_047_cont_0_params.py
+file RPS/step_047_cont_0_params.tz
+file RPS/step_047_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 2)))))
+Comment...
+ h1: Test 9: Add third player - should fail
+file RPS/step_049_cont_0_params.py
+file RPS/step_049_cont_0_params.tz
+file RPS/step_049_cont_0_params.json
+Executing add_player(sp.record(choice = 0))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0)} (Pair 1000000 2)))))
+file RPS/step_050_cont_0_params.py
+file RPS/step_050_cont_0_params.tz
+file RPS/step_050_cont_0_params.json
+Executing add_player(sp.record(choice = 1))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 1)} (Pair 2000000 2)))))
+file RPS/step_051_cont_0_params.py
+file RPS/step_051_cont_0_params.tz
+file RPS/step_051_cont_0_params.json
+Executing add_player(sp.record(choice = 2))...
+Expected error: 'Assert failure: self.data.num_players < 2'
+file RPS/step_052_cont_0_params.py
+file RPS/step_052_cont_0_params.tz
+file RPS/step_052_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 2)))))
+Comment...
+ h1: Test 10: Play without tez - should fail
+file RPS/step_054_cont_0_params.py
+file RPS/step_054_cont_0_params.tz
+file RPS/step_054_cont_0_params.json
+Executing add_player(sp.record(choice = 0))...
+Expected error: 'Assert failure: sp.amount == sp.tez(1)'
+Comment...
+ h1: Test 11: Non-admin check - should fail
+file RPS/step_056_cont_0_params.py
+file RPS/step_056_cont_0_params.tz
+file RPS/step_056_cont_0_params.json
+Executing add_player(sp.record(choice = 0))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0)} (Pair 1000000 2)))))
+file RPS/step_057_cont_0_params.py
+file RPS/step_057_cont_0_params.tz
+file RPS/step_057_cont_0_params.json
+Executing add_player(sp.record(choice = 1))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 2 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0); Elt 1 (Pair "tz1iUWBsTNaJYjRhtFkgbacpY4k8H1ywbU2T" 1)} (Pair 2000000 2)))))
+file RPS/step_058_cont_0_params.py
+file RPS/step_058_cont_0_params.tz
+file RPS/step_058_cont_0_params.json
+Executing check(())...
+Expected error: 'Only admin can check'
+file RPS/step_059_cont_0_params.py
+file RPS/step_059_cont_0_params.tz
+file RPS/step_059_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 2)))))
+Comment...
+ h1: Test 12: Non-admin reset - should fail
+file RPS/step_061_cont_0_params.py
+file RPS/step_061_cont_0_params.tz
+file RPS/step_061_cont_0_params.json
+Executing add_player(sp.record(choice = 0))...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 1 (Pair {Elt 0 (Pair "tz1SSMCJNnvMoTkWSjgYYHSPNqAdXxXXhbKX" 0)} (Pair 1000000 2)))))
+file RPS/step_062_cont_0_params.py
+file RPS/step_062_cont_0_params.tz
+file RPS/step_062_cont_0_params.json
+Executing reset(())...
+Expected error: 'Assert failure: sp.sender == self.data.admin'
+file RPS/step_063_cont_0_params.py
+file RPS/step_063_cont_0_params.tz
+file RPS/step_063_cont_0_params.json
+Executing reset(())...
+ -> (Pair "tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq" (Pair {Elt 0 {Elt 0 2; Elt 1 1; Elt 2 0}; Elt 1 {Elt 0 0; Elt 1 2; Elt 2 1}; Elt 2 {Elt 0 1; Elt 1 0; Elt 2 2}} (Pair 0 (Pair {} (Pair 0 2)))))

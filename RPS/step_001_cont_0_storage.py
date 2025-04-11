@@ -1,0 +1,1 @@
+sp.record(admin = sp.address('tz1SfRoaCkrBkXqTzhz67QYVPJAU9Y2g48kq'), check_winner = {0 : {0 : 2, 1 : 1, 2 : 0}, 1 : {0 : 0, 1 : 2, 2 : 1}, 2 : {0 : 1, 1 : 0, 2 : 2}}, num_players = 0, players = {}, reward = sp.tez(0), winner = -1)

@@ -1,0 +1,11 @@
+parameter (string %name);
+storage string;
+code {#UNPAIR;
+      #SWAP;
+      #DROP;
+      CAR; # pega primeiro elemento da tupla - Se fosse o segundo, seria CDR
+      PUSH string ", Hello!";
+      DIG 1; # busca alguém na pilha para colocar no topo
+      CONCAT;
+      NIL operation; 
+      PAIR;};

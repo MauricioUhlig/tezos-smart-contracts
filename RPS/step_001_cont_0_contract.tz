@@ -1,0 +1,287 @@
+parameter (or (int %add_player) (or (unit %check) (unit %reset)));
+storage   (pair (address %admin) (pair (map %check_winner int (map int int)) (pair (int %num_players) (pair (map %players int (pair (address %address) (int %choice))) (pair (mutez %reward) (int %winner))))));
+code
+  {
+    UNPAIR;     # @parameter : @storage
+    IF_LEFT
+      {
+        # == add_player ==
+        # assert self.data.num_players < 2 # @parameter%add_player : @storage
+        PUSH int 2; # int : @parameter%add_player : @storage
+        DUP 3;      # @storage : int : @parameter%add_player : @storage
+        GET 5;      # int : int : @parameter%add_player : @storage
+        COMPARE;    # int : @parameter%add_player : @storage
+        LT;         # bool : @parameter%add_player : @storage
+        IF
+          {}
+          {
+            PUSH string "Assert failure: self.data.num_players < 2"; # string : @parameter%add_player : @storage
+            FAILWITH;   # FAILED
+          }; # @parameter%add_player : @storage
+        # assert sp.amount == sp.tez(1) # @parameter%add_player : @storage
+        PUSH mutez 1000000; # mutez : @parameter%add_player : @storage
+        AMOUNT;     # @amount : mutez : @parameter%add_player : @storage
+        COMPARE;    # int : @parameter%add_player : @storage
+        EQ;         # bool : @parameter%add_player : @storage
+        IF
+          {}
+          {
+            PUSH string "Assert failure: sp.amount == sp.tez(1)"; # string : @parameter%add_player : @storage
+            FAILWITH;   # FAILED
+          }; # @parameter%add_player : @storage
+        SWAP;       # @storage : @parameter%add_player
+        # self.data.reward += sp.amount # @storage : @parameter%add_player
+        DUP;        # @storage : @storage : @parameter%add_player
+        GET 9;      # mutez : @storage : @parameter%add_player
+        AMOUNT;     # @amount : mutez : @storage : @parameter%add_player
+        ADD;        # mutez : @storage : @parameter%add_player
+        UPDATE 9;   # @storage : @parameter%add_player
+        SWAP;       # @parameter%add_player : @storage
+        # self.data.players[self.data.num_players] = sp.record( # @parameter%add_player : @storage
+        DUP 2;      # @storage : @parameter%add_player : @storage
+        DUP;        # @storage : @storage : @parameter%add_player : @storage
+        GET 7;      # map int (pair (address %address) (int %choice)) : @storage : @parameter%add_player : @storage
+        DIG 2;      # @parameter%add_player : map int (pair (address %address) (int %choice)) : @storage : @storage
+        SENDER;     # @sender : @parameter%add_player : map int (pair (address %address) (int %choice)) : @storage : @storage
+        PAIR;       # pair @sender @parameter%add_player : map int (pair (address %address) (int %choice)) : @storage : @storage
+        SOME;       # option (pair @sender @parameter%add_player) : map int (pair (address %address) (int %choice)) : @storage : @storage
+        DIG 3;      # @storage : option (pair @sender @parameter%add_player) : map int (pair (address %address) (int %choice)) : @storage
+        GET 5;      # int : option (pair @sender @parameter%add_player) : map int (pair (address %address) (int %choice)) : @storage
+        UPDATE;     # map int (pair address int) : @storage
+        UPDATE 7;   # @storage
+        # self.data.num_players += 1 # @storage
+        DUP;        # @storage : @storage
+        GET 5;      # int : @storage
+        PUSH int 1; # int : int : @storage
+        ADD;        # int : @storage
+        UPDATE 5;   # @storage
+        NIL operation; # list operation : @storage
+      }
+      {
+        IF_LEFT
+          {
+            DROP;       # @storage
+            # == check ==
+            # assert sp.sender == self.data.admin, "Only admin can check" # @storage
+            DUP;        # @storage : @storage
+            CAR;        # address : @storage
+            SENDER;     # @sender : address : @storage
+            COMPARE;    # int : @storage
+            EQ;         # bool : @storage
+            IF
+              {}
+              {
+                PUSH string "Only admin can check"; # string : @storage
+                FAILWITH;   # FAILED
+              }; # @storage
+            # assert self.data.num_players == 2, "You can only check if all have played" # @storage
+            PUSH int 2; # int : @storage
+            DUP 2;      # @storage : int : @storage
+            GET 5;      # int : int : @storage
+            COMPARE;    # int : @storage
+            EQ;         # bool : @storage
+            IF
+              {}
+              {
+                PUSH string "You can only check if all have played"; # string : @storage
+                FAILWITH;   # FAILED
+              }; # @storage
+            # p0_choice = self.data.players[0].choice # @storage
+            DUP;        # @storage : @storage
+            GET 7;      # map int (pair (address %address) (int %choice)) : @storage
+            PUSH int 0; # int : map int (pair (address %address) (int %choice)) : @storage
+            GET;        # option (pair (address %address) (int %choice)) : @storage
+            IF_NONE
+              {
+                PUSH int 36; # int : @storage
+                FAILWITH;   # FAILED
+              }
+              {}; # @some : @storage
+            CDR;        # int : @storage
+            # p1_choice = self.data.players[1].choice # int : @storage
+            DUP 2;      # @storage : int : @storage
+            GET 7;      # map int (pair (address %address) (int %choice)) : int : @storage
+            PUSH int 1; # int : map int (pair (address %address) (int %choice)) : int : @storage
+            GET;        # option (pair (address %address) (int %choice)) : int : @storage
+            IF_NONE
+              {
+                PUSH int 37; # int : int : @storage
+                FAILWITH;   # FAILED
+              }
+              {}; # @some : int : @storage
+            CDR;        # int : int : @storage
+            # self.data.winner = self.data.check_winner[p0_choice][p1_choice] # int : int : @storage
+            DUP 3;      # @storage : int : int : @storage
+            GET 3;      # map int (map int int) : int : int : @storage
+            DIG 2;      # int : map int (map int int) : int : @storage
+            GET;        # option (map int int) : int : @storage
+            IF_NONE
+              {
+                PUSH int 38; # int : int : @storage
+                FAILWITH;   # FAILED
+              }
+              {}; # @some : int : @storage
+            SWAP;       # int : @some : @storage
+            GET;        # option int : @storage
+            IF_NONE
+              {
+                PUSH int 38; # int : @storage
+                FAILWITH;   # FAILED
+              }
+              {}; # @some : @storage
+            UPDATE 10;  # @storage
+            # if self.data.winner  == 0:  # Player 0 wins # @storage
+            PUSH int 0; # int : @storage
+            DUP 2;      # @storage : int : @storage
+            GET 10;     # int : int : @storage
+            COMPARE;    # int : @storage
+            EQ;         # bool : @storage
+            IF
+              {
+                # sp.send(self.data.players[0].address, self.data.reward) # @storage
+                NIL operation; # list operation : @storage
+                DUP 2;      # @storage : list operation : @storage
+                GET 7;      # map int (pair (address %address) (int %choice)) : list operation : @storage
+                PUSH int 0; # int : map int (pair (address %address) (int %choice)) : list operation : @storage
+                GET;        # option (pair (address %address) (int %choice)) : list operation : @storage
+                IF_NONE
+                  {
+                    PUSH int 41; # int : list operation : @storage
+                    FAILWITH;   # FAILED
+                  }
+                  {}; # @some : list operation : @storage
+                CAR;        # address : list operation : @storage
+                CONTRACT unit; # option (contract unit) : list operation : @storage
+                IF_NONE
+                  {
+                    PUSH int 41; # int : list operation : @storage
+                    FAILWITH;   # FAILED
+                  }
+                  {}; # @some : list operation : @storage
+                DUP 3;      # @storage : @some : list operation : @storage
+                GET 9;      # mutez : @some : list operation : @storage
+                UNIT;       # unit : mutez : @some : list operation : @storage
+                TRANSFER_TOKENS; # operation : list operation : @storage
+                CONS;       # list operation : @storage
+              }
+              {
+                # if self.data.winner  == 1:  # Player 1 wins # @storage
+                PUSH int 1; # int : @storage
+                DUP 2;      # @storage : int : @storage
+                GET 10;     # int : int : @storage
+                COMPARE;    # int : @storage
+                EQ;         # bool : @storage
+                IF
+                  {
+                    # sp.send(self.data.players[1].address, self.data.reward) # @storage
+                    NIL operation; # list operation : @storage
+                    DUP 2;      # @storage : list operation : @storage
+                    GET 7;      # map int (pair (address %address) (int %choice)) : list operation : @storage
+                    PUSH int 1; # int : map int (pair (address %address) (int %choice)) : list operation : @storage
+                    GET;        # option (pair (address %address) (int %choice)) : list operation : @storage
+                    IF_NONE
+                      {
+                        PUSH int 44; # int : list operation : @storage
+                        FAILWITH;   # FAILED
+                      }
+                      {}; # @some : list operation : @storage
+                    CAR;        # address : list operation : @storage
+                    CONTRACT unit; # option (contract unit) : list operation : @storage
+                    IF_NONE
+                      {
+                        PUSH int 44; # int : list operation : @storage
+                        FAILWITH;   # FAILED
+                      }
+                      {}; # @some : list operation : @storage
+                    DUP 3;      # @storage : @some : list operation : @storage
+                    GET 9;      # mutez : @some : list operation : @storage
+                    UNIT;       # unit : mutez : @some : list operation : @storage
+                    TRANSFER_TOKENS; # operation : list operation : @storage
+                    CONS;       # list operation : @storage
+                  }
+                  {
+                    # sp.send(self.data.players[0].address, sp.tez(1)) # @storage
+                    NIL operation; # list operation : @storage
+                    DUP 2;      # @storage : list operation : @storage
+                    GET 7;      # map int (pair (address %address) (int %choice)) : list operation : @storage
+                    PUSH int 0; # int : map int (pair (address %address) (int %choice)) : list operation : @storage
+                    GET;        # option (pair (address %address) (int %choice)) : list operation : @storage
+                    IF_NONE
+                      {
+                        PUSH int 47; # int : list operation : @storage
+                        FAILWITH;   # FAILED
+                      }
+                      {}; # @some : list operation : @storage
+                    CAR;        # address : list operation : @storage
+                    CONTRACT unit; # option (contract unit) : list operation : @storage
+                    IF_NONE
+                      {
+                        PUSH int 47; # int : list operation : @storage
+                        FAILWITH;   # FAILED
+                      }
+                      {}; # @some : list operation : @storage
+                    PUSH mutez 1000000; # mutez : @some : list operation : @storage
+                    UNIT;       # unit : mutez : @some : list operation : @storage
+                    TRANSFER_TOKENS; # operation : list operation : @storage
+                    CONS;       # list operation : @storage
+                    # sp.send(self.data.players[1].address, sp.tez(1)) # list operation : @storage
+                    DUP 2;      # @storage : list operation : @storage
+                    GET 7;      # map int (pair (address %address) (int %choice)) : list operation : @storage
+                    PUSH int 1; # int : map int (pair (address %address) (int %choice)) : list operation : @storage
+                    GET;        # option (pair (address %address) (int %choice)) : list operation : @storage
+                    IF_NONE
+                      {
+                        PUSH int 48; # int : list operation : @storage
+                        FAILWITH;   # FAILED
+                      }
+                      {}; # @some : list operation : @storage
+                    CAR;        # address : list operation : @storage
+                    CONTRACT unit; # option (contract unit) : list operation : @storage
+                    IF_NONE
+                      {
+                        PUSH int 48; # int : list operation : @storage
+                        FAILWITH;   # FAILED
+                      }
+                      {}; # @some : list operation : @storage
+                    PUSH mutez 1000000; # mutez : @some : list operation : @storage
+                    UNIT;       # unit : mutez : @some : list operation : @storage
+                    TRANSFER_TOKENS; # operation : list operation : @storage
+                    CONS;       # list operation : @storage
+                  }; # list operation : @storage
+              }; # list operation : @storage
+          }
+          {
+            DROP;       # @storage
+            # == reset ==
+            # assert sp.sender == self.data.admin # @storage
+            DUP;        # @storage : @storage
+            CAR;        # address : @storage
+            SENDER;     # @sender : address : @storage
+            COMPARE;    # int : @storage
+            EQ;         # bool : @storage
+            IF
+              {}
+              {
+                PUSH string "Assert failure: sp.sender == self.data.admin"; # string : @storage
+                FAILWITH;   # FAILED
+              }; # @storage
+            # self.data.players = {} # @storage
+            EMPTY_MAP int (pair address int); # map int (pair address int) : @storage
+            UPDATE 7;   # @storage
+            # self.data.num_players = 0 # @storage
+            PUSH int 0; # int : @storage
+            UPDATE 5;   # @storage
+            # self.data.reward = sp.tez(0) # @storage
+            PUSH mutez 0; # mutez : @storage
+            UPDATE 9;   # @storage
+            NIL operation; # list operation : @storage
+          }; # list operation : @storage
+      }; # list operation : @storage
+    NIL operation; # list operation : list operation : @storage
+    SWAP;       # list operation : list operation : @storage
+    ITER
+      {
+        CONS;       # list operation : @storage
+      }; # list operation : @storage
+    PAIR;       # pair (list operation) @storage
+  };
